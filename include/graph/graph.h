@@ -3,6 +3,7 @@
 
 #include "graph/export.h"
 #include "graph/status.h"
+#include "graph/env.h"
 
 // 定义命名数据库命名空间为tdb
 namespace tdb {
@@ -37,6 +38,14 @@ public:
   std::string GetGraphName();
 
   Status DestroyDB(); 
+
+
+
+private:
+    friend class DB;
+    // 日志
+    //log::Writer* log_;
+    Env* const env_;
 
 };
 

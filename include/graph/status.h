@@ -1,3 +1,8 @@
+#ifndef STORAGE_TDB_INCLUDE_STATUS_H_
+#define STORAGE_TDB_INCLUDE_STATUS_H_
+
+#include <string>
+
 #include "graph/export.h"
 
 namespace tdb
@@ -21,3 +26,5 @@ namespace tdb
     };
 
 }
+
+#endif  // STORAGE_TDB_INCLUDE_STATUS_H_

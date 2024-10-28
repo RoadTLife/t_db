@@ -1,6 +1,10 @@
 #ifndef STORAGE_TDB_INCLUDE_EXPORT_H_
 #define STORAGE_TDB_INCLUDE_EXPORT_H_
 
+/**
+ * 用于控制：宏用来控制库函数的导出或导入
+ */
+
 #if !defined(TDB_EXPORT)
 
 #if defined(TDB_SHARED_LIBRARY)
