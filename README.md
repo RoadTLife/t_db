@@ -5,7 +5,10 @@
 
 
 ## 2. Quick Start
-
+```bash
+mkdir -p build && cd build
+cmake .. && cmake --build .
+```
 
 ## 3. Documentation
 
