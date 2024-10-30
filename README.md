@@ -12,6 +12,10 @@ Functionalities:
 ### Build for Linux
 Quick Start
 ```bash
+git clone https://github.com/T-GraphDB/tgraph_db.git
+cd tgraph_db
+
+# build 
 mkdir -p build && cd build
 cmake .. && cmake --build .
 ```
