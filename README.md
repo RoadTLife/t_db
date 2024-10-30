@@ -7,7 +7,6 @@ tgraph is a high performance graph database.
 Functionalities:
 * Labeled property graph model(Unfinished)
 
-
 ## 2. Building
 
 ### Build for Linux
