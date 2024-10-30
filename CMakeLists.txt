@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.10)
 project(t_graph_db)
 
 set(ROOT_DIR ${CMAKE_CURRENT_LIST_DIR})  # 定义ROOT_DIR变量
@@ -8,7 +8,7 @@ set(GRAPH_INCLUDE_DIR ${CMAKE_CURRENT_LIST_DIR}/include)
 include_directories(${GRAPH_INCLUDE_DIR})
 
  # This project is tested using GoogleTest.
-add_subdirectory(third_party/googletest)
+# add_subdirectory(third_party/googletest)
 
 set(DIR_SRCS 
     src/server/entry_point.cpp  # 假设主源文件是main.cpp，位于src目录下

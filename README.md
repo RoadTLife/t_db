@@ -2,9 +2,16 @@
 
 
 ## 1. Introduction
+tgraph is a high performance graph database.
+
+Functionalities:
+* Labeled property graph model(Unfinished)
 
 
-## 2. Quick Start
+## 2. Building
+
+### Build for Linux
+Quick Start
 ```bash
 mkdir -p build && cd build
 cmake .. && cmake --build .
