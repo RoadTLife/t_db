@@ -1,7 +1,6 @@
-#include <iostream>
-
-#include "server/tdb_server.h"
+#include "tdb_server.h"
 #include "service.h"
+#include "config.h"
 
 namespace tdb
 {
@@ -32,6 +31,8 @@ int main() {
     {
 
     }
+
+    std::shared_ptr<tdb::GlobalConfig> config = std::make_shared<tdb::GlobalConfig>();
 
     tdb::TDBService service(config);
     if (cmd == "run") {

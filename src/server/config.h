@@ -1,3 +1,6 @@
+#ifndef SRC_SERVER_CONFIG_H
+#define SRC_SERVER_CONFIG_H
+
 #include <atomic>
 #include <string>
 
@@ -74,6 +77,9 @@ struct GlobalConfig : public BasicConfigs {
     [[nodiscard]] std::string FormatAsString(size_t heading_space = 2) const;
     static int PrintVersion(std::string &config_file, std::string &cmd, int *argc, char ***argv);
     virtual void InitConfig(std::string &cmd);
+
 };
 
 }
+
+#endif

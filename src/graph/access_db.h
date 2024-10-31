@@ -1,5 +1,5 @@
-#ifndef STORAGE_TDB_INCLUDE_DB_H_
-#define STORAGE_TDB_INCLUDE_DB_H_
+#ifndef STORAGE_TDB_INCLUDE_ACCESS_H_
+#define STORAGE_TDB_INCLUDE_ACCESS_H_
 
 namespace tdb {
 class AccessControlledDB {

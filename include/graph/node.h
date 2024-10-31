@@ -24,7 +24,7 @@ namespace graph_api {
  */
 enum NodeType {
     Type_A,
-    Tpye_B
+    Type_B
 };
 
 class Node {

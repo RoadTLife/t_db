@@ -1,7 +1,11 @@
 #ifndef STORAGE_TDB_INCLUDE_SERVICE_H_
 #define STORAGE_TDB_INCLUDE_SERVICE_H_
 #include <string>
+#include <fstream>
 #include <filesystem>
+#include <iostream>
+#include <unistd.h>
+
 
 namespace tdb {
 class Service {
@@ -9,31 +13,39 @@ class Service {
     std::string pid_path_;
 
     int GetServicePid() const {
-        if (fs.FileExists(pid_path_)) {
-            std::ifstream pid_file(pid_path_);
+        // if (fs.FileExists(pid_path_)) {
+        //     std::ifstream pid_file(pid_path_);
 
-             // 文件状态有问题
-            if (!pid_file.good()){
-                return -2;
-            }
+        //      // 文件状态有问题
+        //     if (!pid_file.good()){
+        //         return -2;
+        //     }
 
-            // 从文件中读取
-            std::string line;
-            std::getline(pid_file, line);
+        //     // 从文件中读取
+        //     std::string line;
+        //     std::getline(pid_file, line);
 
-            return pid;
-        } else {
-            return -1;
-        }
+        //     return pid;
+        // } else {
+        //     return -1;
+        // }
+
+        return -1;
     }
 
-    int setServicePid(int pid) {
+    int SetServicePid(int pid) {
+        if (!std::filesystem::create_directories(std::filesystem::path(pid_path_).parent_path())) {
+            // 如果父目录不存在，并且创建失败，返回错误代码
+            return -1;
+        }
+
         std::ofstream pid_file(pid_path_);
         if(!pid_file.good()) {
-            return -2;
+            return -1;
         }
 
         pid_file << pid;
+        return 0;
     }
 
     int RemoveServicePidFile() const {
@@ -51,22 +63,28 @@ class Service {
         std::cout << "Starting " << service_name_ << "...";
 
         int oldpid = GetServicePid();
+        int pid = fork();
+        if (pid == -1) {
+            std::cout << "Failed to create child process: " << std::endl;
+            return -2;
+        }
 
+        return 0;
 #endif
 }
 
     int Stop() {
 #ifdef _WIN32
-        return Kill();
+        return 0;
 #else
-
+        return 0;
 #endif
     }
 
     int Restart() {
         int r = Stop();
         if (r != 0 && r != -1) {
-            std::cout << "Failed to stop existing service." << std::endl;
+            //std::cout << "Failed to stop existing service." << std::endl;
             return r;
         }
         return Start();

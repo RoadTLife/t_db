@@ -1,5 +1,5 @@
-#ifndef STORAGE_TDB_INCLUDE_DB_H_
-#define STORAGE_TDB_INCLUDE_DB_H_
+#ifndef STORAGE_TDB_INCLUDE_LOG_H_
+#define STORAGE_TDB_INCLUDE_LOG_H_
 
 namespace tdb
 {
