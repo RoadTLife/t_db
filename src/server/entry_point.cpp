@@ -6,8 +6,9 @@ namespace tdb
 {
 class TDBService : public Service {
     TGraphServer server_;
+
 public:
-    explicit TDBService(const std::shared_ptr<tdb::GlobalConfig> config) : Service("graph", "./graph.pid"), server_(config) {}
+    explicit TDBService(const std::string config) : Service("graph", "./graph.pid"), server_(config) {}
 
     int Run() override {
         auto ret = server_.Start();
@@ -32,7 +33,8 @@ int main() {
 
     }
 
-    std::shared_ptr<tdb::GlobalConfig> config = std::make_shared<tdb::GlobalConfig>();
+    // std::shared_ptr<tdb::GlobalConfig> config = std::make_shared<tdb::GlobalConfig>();
+    std::string config = "config.json";
 
     tdb::TDBService service(config);
     if (cmd == "run") {

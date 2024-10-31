@@ -19,7 +19,7 @@ include_directories(
 
 set(DIR_SRCS 
     src/server/entry_point.cpp  # 假设主源文件是main.cpp，位于src目录下
-    src/server/
+    src/server/tdb_server.cpp
     # 其他源文件...
 )
 

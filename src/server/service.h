@@ -5,6 +5,7 @@
 #include <filesystem>
 #include <iostream>
 #include <unistd.h>
+#include <signal.h>
 
 
 namespace tdb {
@@ -92,6 +93,16 @@ class Service {
 
     // 类似抽象方法，由派生类（derived class）中被重写（override），从而实现多态
     virtual int Run() = 0;
+
+
+ private:
+    bool ProcessRunning(int pid) {
+#ifdef _WIN32
+        return false;
+#else
+        return kill(pid, 0) == 0;
+#endif
+    }
 };
 }
 
