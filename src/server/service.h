@@ -12,6 +12,8 @@ namespace tdb {
 class Service {
     std::string service_name_;
     std::string pid_path_;
+    ThreadHandler      *thread_handler_ = nullptr;
+    volatile bool started_ = false;
 
     int GetServicePid() const {
         // if (fs.FileExists(pid_path_)) {
