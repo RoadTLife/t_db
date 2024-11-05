@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.16)
 project(t_graph_db C CXX)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(ROOT_DIR ${CMAKE_CURRENT_LIST_DIR})  # 定义ROOT_DIR变量
 set(GRAPH_INCLUDE_DIR ${CMAKE_CURRENT_LIST_DIR}/include)
+set(GRPC_DIR "/soft/lib")
 
 option(TDB_BUILD_TESTS "Build TDB's unit tests" ON)
 

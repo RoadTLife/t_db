@@ -2,9 +2,9 @@
 
 #include <iostream>
 
-#include "exception.h"
-#include "ios.h"
-#include "new.h"
+#include "./exception.h"
+#include "./ios.h"
+#include "./new.h"
 
 using std::cerr;
 using std::cin;

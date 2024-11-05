@@ -56,12 +56,14 @@ namespace common
 
     // 设置log 的level
     int set_log_level(const LOG_LEVEL log_level);
-    
+
     LOG_LEVEL get_log_level();
 
     int output(const LOG_LEVEL level, const char *module, const char *prefix, const char *f, ...);
 
     bool check_output(const LOG_LEVEL log_level, const char *module);
+
+    intptr_t context_id();
 
   private:
     pthread_mutex_t lock_;
